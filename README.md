@@ -13,3 +13,5 @@ How to install?
 3. Click "Install from disk..."
 4. Find the file "NodeDungeonRouter.py" you downloaded and install it.
 5. Click checkbox if blender did not enable it automaticly.
+
+To use installed plugin go into any node editor (Materials or Compositor... (not sure if works with geometry nodes)) and find it in the N-Panel (buttons on the right), click "Node Dungeon Router".
