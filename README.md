@@ -8,11 +8,13 @@ After:
 
 ## How to install?
 1) Download the add-on file
+
 Open the repository page.
 Click NodeDungeonRouter.py.
 Download it to your computer (GitHub: Download raw file / save the file).
 
 2) Install it in Blender
+
 Open Blender.
 Go to Edit → Preferences → Add-ons.
 In the top-right, click the small ▼ menu (Blender’s add-ons options menu).
@@ -21,6 +23,7 @@ Select the downloaded file NodeDungeonRouter.py and confirm.
 If Blender doesn’t enable it automatically, tick the checkbox next to the add-on to enable it. 
 
 3) (Recommended) Save preferences
+
 In the Preferences window, click Save Preferences so it stays enabled next time you open Blender.
 
 ## How to use it
