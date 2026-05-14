@@ -1,5 +1,5 @@
 # Node Dungeon Router
-Plugin, that sorts nodes in blender with A* algorithm. Settings can be adjusted. Project is vibe-coded, so **do not** expect **any** updates. Created for my personal use initially and i made it out public. Feel free to use. :)
+Plugin, that sorts nodes in blender with A* algorithm. Settings can be adjusted. Project is **vibe-coded**, so **do not** expect **any** updates. Created for my personal use initially and i made it out public. Feel free to use. :)
 
 Before:
 <img width="1483" height="680" alt="1778745642306826883" src="https://github.com/user-attachments/assets/861a7bf9-40b8-476b-b7e9-e0d279fe9339" />
