@@ -8,6 +8,7 @@ Disclaimer!!!!
 > - **Personal project.** Originally created for personal use and may not meet production-grade standards.
 > - **Provided as-is.** The author assumes no liability for bugs, data leaks, financial losses, or any other consequences arising from use.
 > - **AI-generated.** Portions of this codebase were written by an AI and may contain subtle bugs, vulnerabilities, or suboptimal implementations.
+
 I know, sounds scary, but at least it works.
 
 Written for Blender 5.1.1.
