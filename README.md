@@ -1,5 +1,5 @@
 # Node Dungeon Router
-Plugin, that sorts nodes in blender with A* algorithm. Settings can be adjusted. Created for my personal use initially and i made it out public. Feel free to use. :)
+Plugin, that sorts and makes reroutes for nodes in blender with A* algorithm. Settings can be adjusted. Created for my personal use initially and i made it out public. Feel free to use. :)
 
 Disclaimer!!!!
 > This project was built using **vibe coding** — a technique where AI generates code from natural language prompts.
