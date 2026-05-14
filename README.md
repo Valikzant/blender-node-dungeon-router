@@ -11,5 +11,5 @@ How to install?
 1. Open Blender and go to Edit → Preferences → Add-ons
 2. Click `\/` button on the top-right corner
 3. Click "Install from disk..."
-4. Find the file you downloaded and install it.
+4. Find the file "NodeDungeonRouter.py" and install it.
 5. Click checkbox if blender did not enable it automaticly.
