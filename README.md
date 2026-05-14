@@ -5,7 +5,7 @@ Disclaimer!!!!
 > This project was built using **vibe coding** — a technique where AI generates code from natural language prompts.
 >
 > - **No guarantees.** The code has not undergone comprehensive testing, code review, or security auditing.
-> - **Personal project.** Originally created for personal use and may not meet production-grade standards.
+> - **Personal project.** Originally created for personal use and may not meet production-grade standards. And **is not planned to be updated**
 > - **Provided as-is.** The author assumes no liability for bugs, data leaks, financial losses, or any other consequences arising from use.
 > - **AI-generated.** Portions of this codebase were written by an AI and may contain subtle bugs, vulnerabilities, or suboptimal implementations.
 
