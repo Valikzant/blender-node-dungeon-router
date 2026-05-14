@@ -1,7 +1,15 @@
 # Node Dungeon Router
-Plugin, that sorts nodes in blender with A* algorithm. Settings can be adjusted. Project is **vibe-coded**, so **do not** expect **any** updates. Created for my personal use initially and i made it out public. Feel free to use. :)
+Plugin, that sorts nodes in blender with A* algorithm. Settings can be adjusted. Created for my personal use initially and i made it out public. Feel free to use. :)
 
-Written for Blender 5.1.1. The addon does not guarantee a successful placement. Make backups.
+Disclaimer!!!!
+> This project was built using **vibe coding** — a technique where AI generates code from natural language prompts.
+>
+> - **No guarantees.** The code has not undergone comprehensive testing, code review, or security auditing.
+> - **Personal project.** Originally created for personal use and may not meet production-grade standards.
+> - **Provided as-is.** The author assumes no liability for bugs, data leaks, financial losses, or any other consequences arising from use.
+> - **AI-generated.** Portions of this codebase were written by an AI and may contain subtle bugs, vulnerabilities, or suboptimal implementations.
+
+Written for Blender 5.1.1.
 
 Before:
 <img width="1483" height="680" alt="1778745642306826883" src="https://github.com/user-attachments/assets/861a7bf9-40b8-476b-b7e9-e0d279fe9339" />
