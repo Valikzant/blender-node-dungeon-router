@@ -250,6 +250,7 @@ class CLS_RunRouterOp_G(bpy.types.Operator):
             return {"CANCELLED"}
 
         # Получаем активный нод-дерево из любого нод-эдитора
+        # edit_tree — вложенная группа (если зашли внутрь), node_tree — верхний уровень
         objSpace_iL = None
         for objArea_iP in context.screen.areas:
             if objArea_iP.type == "NODE_EDITOR":
@@ -264,9 +265,12 @@ class CLS_RunRouterOp_G(bpy.types.Operator):
             self.report({"ERROR"}, "No active node tree found in Node Editor")
             return {"CANCELLED"}
 
+        # Если пользователь зашёл внутрь группы — берём edit_tree, иначе node_tree
+        objActiveTree_iL = objSpace_iL.edit_tree if objSpace_iL.edit_tree else objSpace_iL.node_tree
+
         objProps_iL = context.scene.nodeRouterProps
         FUN_LayoutNodes_G(
-            objSpace_iL.node_tree,
+            objActiveTree_iL,
             objProps_iL.INT_GridSize_dC,
             objProps_iL.INT_StepX_dC,
             objProps_iL.INT_StepY_dC,
@@ -569,14 +573,12 @@ def FUN_LayoutNodes_G(
                 objNode_iP.location.y          = round(floY_iP / intGridSize_iA) * intGridSize_iA
                 ditCurrentY_iL[objNode_iP.name] = objNode_iP.location.y
 
-    # Input/Output нодам — фиксированные позиции
+    # GroupInput/Output — фиксируем только X, Y уже выставлен барицентром выше
     for objNode_iP in objTree_iA.nodes:
         if objNode_iP.bl_idname == "NodeGroupInput":
             objNode_iP.location.x = (0 - intMaxDepth_iL) * intStepX_iA - intStepX_iA
-            objNode_iP.location.y = 0
         elif objNode_iP.bl_idname == "NodeGroupOutput":
             objNode_iP.location.x = intStepX_iA
-            objNode_iP.location.y = 0
 
     # --- 4. Портовые рероуты ---
     print("[ 4 ] Creating port reroutes...")
@@ -607,7 +609,8 @@ def FUN_LayoutNodes_G(
             objPort_iP            = objTree_iA.nodes.new("NodeReroute")
             objPort_iP.name       = f"PORT_OUT_{objNode_iP.name}_{intFs_iP}"
             objPort_iP.location.x = round((objNode_iP.location.x + objNode_iP.width + intPortSpacing_iA) / intGridSize_iA) * intGridSize_iA
-            objPort_iP.location.y = round(floStartOutY_iP - intI_iP * intPortSpacingGrid_iL) * intGridSize_iA
+            floRawY_iP            = (floStartOutY_iP - intI_iP * intPortSpacingGrid_iL) * intGridSize_iA
+            objPort_iP.location.y = round(floRawY_iP / intGridSize_iA) * intGridSize_iA
             objTree_iA.links.new(objNode_iP.outputs[intFs_iP], objPort_iP.inputs[0])
             ditOutPorts_iL[(objNode_iP.name, intFs_iP)] = objPort_iP
 
@@ -617,7 +620,8 @@ def FUN_LayoutNodes_G(
             objPort_iP            = objTree_iA.nodes.new("NodeReroute")
             objPort_iP.name       = f"PORT_IN_{objNode_iP.name}_{intTs_iP}"
             objPort_iP.location.x = round((objNode_iP.location.x - intPortSpacing_iA) / intGridSize_iA) * intGridSize_iA
-            objPort_iP.location.y = round(floStartInY_iP - intI_iP * intPortSpacingGrid_iL) * intGridSize_iA
+            floRawY_iP            = (floStartInY_iP - intI_iP * intPortSpacingGrid_iL) * intGridSize_iA
+            objPort_iP.location.y = round(floRawY_iP / intGridSize_iA) * intGridSize_iA
             objTree_iA.links.new(objPort_iP.outputs[0], objNode_iP.inputs[intTs_iP])
             ditInPorts_iL[(objNode_iP.name, intTs_iP)] = objPort_iP
 
